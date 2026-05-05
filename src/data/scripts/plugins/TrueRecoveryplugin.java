@@ -6,7 +6,7 @@ import com.fs.starfarer.api.combat.ShipHullSpecAPI;
 import java.util.Arrays;
 import java.util.List;
 
-public class Recoveryplugin extends BaseModPlugin {
+public class TrueRecoveryplugin extends BaseModPlugin {
 
     static final List<String> THREAT_HULL_IDS = Arrays.asList(
         "assault_unit", "fabricator_unit", "hive_unit",

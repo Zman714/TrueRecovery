@@ -22,7 +22,7 @@ public class ThreatSkillWatcher implements EveryFrameScript {
 
         if (skillLevel != lastSkillLevel) {
             lastSkillLevel = skillLevel;
-            Recoveryplugin.setThreatRecoverable(skillLevel > 0);
+            TrueRecoveryplugin.setThreatRecoverable(skillLevel > 0);
         }
     }
 }

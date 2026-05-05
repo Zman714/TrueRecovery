@@ -2,7 +2,7 @@
 jars/starfarer.api.jar
 jars/starfarer_obf.jar
 
-# Compiled class files (mod is loaded via Recoverymod.jar, not loose .class files)
+# Compiled class files (mod is loaded via TrueRecovery.jar, not loose .class files)
 bin/
 
 # Local dev config
