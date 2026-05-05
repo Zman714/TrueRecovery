@@ -1,0 +1,6 @@
+V0.1.2
+    Fixed inverted skill check — Threat ship recovery now correctly requires the Automated Ships skill
+    Removed duplicate THREAT_HULL_IDS constant and dead code
+
+V0.1.0
+    initial release
