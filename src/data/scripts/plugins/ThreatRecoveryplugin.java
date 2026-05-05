@@ -6,7 +6,7 @@ import com.fs.starfarer.api.combat.ShipHullSpecAPI;
 import java.util.Arrays;
 import java.util.List;
 
-public class TrueRecoveryplugin extends BaseModPlugin {
+public class ThreatRecoveryplugin extends BaseModPlugin {
 
     static final List<String> THREAT_HULL_IDS = Arrays.asList(
         "assault_unit", "fabricator_unit", "hive_unit",
@@ -15,9 +15,10 @@ public class TrueRecoveryplugin extends BaseModPlugin {
 
     @Override
     public void onGameLoad(boolean newGame) {
-        boolean hasSkill = Global.getSector().getPlayerPerson().getStats()
-            .getSkillLevel("automated_ships") > 0;
-        setThreatRecoverable(hasSkill);
+        float skillLevel = Global.getSector().getPlayerPerson().getStats()
+            .getSkillLevel("automated_ships");
+        setThreatRecoverable(skillLevel > 0);
+        ShroudedRecoveryplugin.setShroudedRecoverable(skillLevel >= 2);
         Global.getSector().addScript(new ThreatSkillWatcher());
     }
 

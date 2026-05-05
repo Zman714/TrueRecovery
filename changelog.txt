@@ -1,3 +1,9 @@
+V0.2.0
+    Added Shrouded Dweller ship recovery gated behind elite Automated Ships skill
+    Added ship_data.csv entries for Shrouded ships with balanced OP values (Tendril: 130, Eye: 175, Maelstrom: 175, Maw: 300)
+    Renamed TrueRecoveryplugin to ThreatRecoveryplugin for clarity
+    Skill watcher now handles both Threat and Shrouded recovery in a single script
+
 V0.1.2
     Fixed inverted skill check — Threat ship recovery now correctly requires the Automated Ships skill
     Removed duplicate THREAT_HULL_IDS constant and dead code
