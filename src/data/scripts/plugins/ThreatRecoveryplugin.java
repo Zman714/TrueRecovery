@@ -3,6 +3,7 @@ package data.scripts.plugins;
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.ShipHullSpecAPI;
+import com.fs.starfarer.api.combat.ShipHullSpecAPI.ShipTypeHints;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,11 +16,12 @@ public class ThreatRecoveryplugin extends BaseModPlugin {
 
     @Override
     public void onGameLoad(boolean newGame) {
+        Global.getSector().addScript(new AutomatedshipsSkillWatcher());
+        if (Global.getSector().getPlayerPerson() == null) return;
         float skillLevel = Global.getSector().getPlayerPerson().getStats()
             .getSkillLevel("automated_ships");
         setThreatRecoverable(skillLevel > 0);
         ShroudedRecoveryplugin.setShroudedRecoverable(skillLevel >= 2);
-        Global.getSector().addScript(new AutomatedshipsSkillWatcher());
     }
 
     static void setThreatRecoverable(boolean recoverable) {
@@ -27,9 +29,9 @@ public class ThreatRecoveryplugin extends BaseModPlugin {
             ShipHullSpecAPI spec = Global.getSettings().getHullSpec(hullId);
             if (spec == null) continue;
             if (recoverable) {
-                spec.getHints().remove(ShipHullSpecAPI.ShipTypeHints.UNBOARDABLE);
-            } else if (!spec.getHints().contains(ShipHullSpecAPI.ShipTypeHints.UNBOARDABLE)) {
-                spec.getHints().add(ShipHullSpecAPI.ShipTypeHints.UNBOARDABLE);
+                spec.getHints().remove(ShipTypeHints.UNBOARDABLE);
+            } else {
+                spec.getHints().add(ShipTypeHints.UNBOARDABLE);
             }
         }
     }

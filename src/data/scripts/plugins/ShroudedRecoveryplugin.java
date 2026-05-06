@@ -2,6 +2,7 @@ package data.scripts.plugins;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.ShipHullSpecAPI;
+import com.fs.starfarer.api.combat.ShipHullSpecAPI.ShipTypeHints;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,9 +17,9 @@ public class ShroudedRecoveryplugin {
             ShipHullSpecAPI spec = Global.getSettings().getHullSpec(hullId);
             if (spec == null) continue;
             if (recoverable) {
-                spec.getTags().remove("no_battle_salvage");
-            } else if (!spec.getTags().contains("no_battle_salvage")) {
-                spec.getTags().add("no_battle_salvage");
+                spec.getHints().remove(ShipTypeHints.UNBOARDABLE);
+            } else {
+                spec.getHints().add(ShipTypeHints.UNBOARDABLE);
             }
         }
     }
