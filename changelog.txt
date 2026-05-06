@@ -1,3 +1,7 @@
+V0.3.0
+    Added Elite version of Automated Ships skill 
+    Moved Threat ship recoverability to elite
+
 V0.2.0
     Added Shrouded Dweller ship recovery gated behind elite Automated Ships skill
     Added ship_data.csv entries for Shrouded ships with balanced OP values (Tendril: 130, Eye: 175, Maelstrom: 175, Maw: 300)
@@ -10,3 +14,5 @@ V0.1.2
 
 V0.1.0
     initial release
+
+

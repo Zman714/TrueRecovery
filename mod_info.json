@@ -1,10 +1,12 @@
 {
-    "id": "TrueRecovery",
-    "name": "TrueRecovery",
-    "author": "Zman147",
-    "version": "0.2.0",
-    "description": "Allows recovery of threat ships",
-    "gameVersion": "0.98a",
-    "jars": ["jars/TrueRecovery.jar"],
-    "modPlugin": "data.scripts.plugins.ThreatRecoveryplugin"
+    "id":  "TrueRecovery",
+    "name":  "TrueRecovery",
+    "author":  "Zman147",
+    "version":  "0.3.0",
+    "description":  "Allows recovery of threat ships",
+    "gameVersion":  "0.98a",
+    "jars":  [
+                 "jars/TrueRecovery.jar"
+             ],
+    "modPlugin":  "data.scripts.plugins.ThreatRecoveryplugin"
 }
