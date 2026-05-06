@@ -1,0 +1,26 @@
+{
+	"id":"automated_ships",
+	"governingAptitude":"technology",
+	"compressHullmods":false,
+	"elite":true,
+	"scope":CUSTOM,
+	"scopeStr":"all automated ships",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"CHARACTER_STATS", "script":"com.fs.starfarer.api.impl.campaign.skills.AutomatedShips$Level2"},
+				{"type":"ALL_SHIPS_IN_FLEET", "script":"com.fs.starfarer.api.impl.campaign.skills.AutomatedShips$Level1"},
+			]
+		},
+		{
+			"name":"Elite",
+			"requiredSkillLevel":2,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"CHARACTER_STATS", "script":"data.scripts.plugins.AutomatedSkilleditplugin$Level2"},
+			]
+		},
+	],
+}

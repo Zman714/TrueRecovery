@@ -22,7 +22,7 @@ public class AutomatedshipsSkillWatcher implements EveryFrameScript {
 
         if (skillLevel != lastSkillLevel) {
             lastSkillLevel = skillLevel;
-            ThreatRecoveryplugin.setThreatRecoverable(skillLevel > 0);
+            ThreatRecoveryplugin.setThreatRecoverable(skillLevel >= 2);
             ShroudedRecoveryplugin.setShroudedRecoverable(skillLevel >= 2);
         }
     }

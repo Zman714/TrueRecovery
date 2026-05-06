@@ -20,7 +20,7 @@ public class ThreatRecoveryplugin extends BaseModPlugin {
         if (Global.getSector().getPlayerPerson() == null) return;
         float skillLevel = Global.getSector().getPlayerPerson().getStats()
             .getSkillLevel("automated_ships");
-        setThreatRecoverable(skillLevel > 0);
+        setThreatRecoverable(skillLevel >= 2);
         ShroudedRecoveryplugin.setShroudedRecoverable(skillLevel >= 2);
     }
 

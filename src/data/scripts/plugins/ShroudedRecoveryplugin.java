@@ -6,7 +6,9 @@ import com.fs.starfarer.api.combat.ShipHullSpecAPI.ShipTypeHints;
 import java.util.Arrays;
 import java.util.List;
 
-public class ShroudedRecoveryplugin {
+class ShroudedRecoveryplugin {
+
+    private ShroudedRecoveryplugin() {}
 
     static final List<String> SHROUDED_HULL_IDS = Arrays.asList(
         "shrouded_tendril", "shrouded_eye", "shrouded_maelstrom", "shrouded_maw"
