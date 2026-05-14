@@ -2,9 +2,10 @@ package data.scripts.plugins;
 
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.ShipHullSpecAPI;
-import com.fs.starfarer.api.combat.ShipHullSpecAPI.ShipTypeHints;
+import com.fs.starfarer.api.util.Misc;
 import lunalib.lunaSettings.LunaSettings;
+
+import java.util.Set;
 
 public class Recoveryplugin extends BaseModPlugin {
 
@@ -26,26 +27,18 @@ public class Recoveryplugin extends BaseModPlugin {
             .getSkillLevel("automated_ships");
         boolean skilled = skillLevel >= 1f;
 
-        boolean threat   = skilled && isEnabled("truerecovery_threatEnabled");
-        boolean shrouded = skilled && isEnabled("truerecovery_shroudedEnabled");
-        boolean omega    = skilled && isEnabled("truerecovery_omegaEnabled");
+        Set<String> recoveryTags = Misc.getAllowedRecoveryTags();
 
-        for (ShipHullSpecAPI spec : Global.getSettings().getAllShipHullSpecs()) {
-            if (spec.hasTag("threat")) {
-                setRecoverable(spec, threat);
-            } else if (spec.hasTag("dweller")) {
-                setRecoverable(spec, shrouded);
-            } else if (spec.hasTag("omega")) {
-                setRecoverable(spec, omega);
-            }
-        }
+        setAllowed(recoveryTags, "truerecovery_threat",  skilled && isEnabled("truerecovery_threatEnabled"));
+        setAllowed(recoveryTags, "truerecovery_dweller", skilled && isEnabled("truerecovery_shroudedEnabled"));
+        setAllowed(recoveryTags, "truerecovery_omega",   skilled && isEnabled("truerecovery_omegaEnabled"));
     }
 
-    private static void setRecoverable(ShipHullSpecAPI spec, boolean recoverable) {
-        if (recoverable) {
-            spec.getHints().remove(ShipTypeHints.UNBOARDABLE);
-        } else if (!spec.getHints().contains(ShipTypeHints.UNBOARDABLE)) {
-            spec.getHints().add(ShipTypeHints.UNBOARDABLE);
+    private static void setAllowed(Set<String> recoveryTags, String tag, boolean allowed) {
+        if (allowed) {
+            recoveryTags.add(tag);
+        } else {
+            recoveryTags.remove(tag);
         }
     }
 

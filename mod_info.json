@@ -2,7 +2,7 @@
     "id": "TrueRecovery",
     "name": "TrueRecovery",
     "author": "Zman147",
-    "version": "0.4.6",
+    "version": "0.5.0",
     "description": "Allows recovery of threat, shrouded, and omega ships",
     "gameVersion": "0.98a",
     "jars": [
