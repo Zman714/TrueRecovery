@@ -16,14 +16,11 @@ public class AutomatedshipsSkillWatcher implements EveryFrameScript {
     @Override
     public void advance(float amount) {
         if (Global.getSector() == null || Global.getSector().getPlayerPerson() == null) return;
-
         float skillLevel = Global.getSector().getPlayerPerson().getStats()
             .getSkillLevel("automated_ships");
-
         if (skillLevel != lastSkillLevel) {
             lastSkillLevel = skillLevel;
-            ThreatRecoveryplugin.setThreatRecoverable(skillLevel >= 2);
-            ShroudedRecoveryplugin.setShroudedRecoverable(skillLevel >= 2);
+            Recoveryplugin.applySettings();
         }
     }
 }
