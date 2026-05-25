@@ -1,3 +1,6 @@
+V1.1.0
+    Tweaks, compat adds and such
+
 V1.0
     Everything's done, it all works.
 
@@ -28,7 +31,7 @@ V0.2.0
     Skill watcher now handles both Threat and Shrouded recovery in a single script
 
 V0.1.2
-    Fixed inverted skill check ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Threat ship recovery now correctly requires the Automated Ships skill
+    Fixed inverted skill check ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Threat ship recovery now correctly requires the Automated Ships skill
     Removed duplicate THREAT_HULL_IDS constant and dead code
 
 V0.1.0
