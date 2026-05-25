@@ -29,9 +29,10 @@ public class Recoveryplugin extends BaseModPlugin {
 
         Set<String> recoveryTags = Misc.getAllowedRecoveryTags();
 
-        setAllowed(recoveryTags, "truerecovery_threat",  skilled && isEnabled("truerecovery_threatEnabled"));
+        setAllowed(recoveryTags, "truerecovery_threat",   skilled && isEnabled("truerecovery_threatEnabled"));
         setAllowed(recoveryTags, "truerecovery_dweller", skilled && isEnabled("truerecovery_shroudedEnabled"));
         setAllowed(recoveryTags, "truerecovery_omega",   skilled && isEnabled("truerecovery_omegaEnabled"));
+        setAllowed(recoveryTags, "truerecovery_derelict", skilled && isEnabled("truerecovery_derelictEnabled"));
     }
 
     private static void setAllowed(Set<String> recoveryTags, String tag, boolean allowed) {
