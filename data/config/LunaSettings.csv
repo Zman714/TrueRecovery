@@ -4,3 +4,4 @@ truerecovery_threatEnabled,Threat Recovery,Boolean,true,,"Allow Threat ships to 
 truerecovery_shroudedEnabled,Shrouded Dweller Recovery,Boolean,true,,"Allow Shrouded Dweller ships to be recovered when the Automated Ships skill is unlocked.",,,
 truerecovery_omegaEnabled,Omega Recovery,Boolean,true,,"Allow Omega ships to be recovered when the Automated Ships skill is unlocked.",,,
 truerecovery_derelictEnabled,Derelict Recovery,Boolean,true,,"Allow Derelict ships (e.g. the Guardian) to be recovered when the Automated Ships skill is unlocked.",,,
+truerecovery_blueprintifyEnabled,Blueprintify Compat Recovery,Boolean,true,,"Requires Blueprintify to be installed. Allow ships in the 'acquire before blueprinted' category (entity faction ships and specially tagged hulls) to be recovered. Not gated behind the Automated Ships skill.",,,
